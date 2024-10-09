@@ -1,0 +1,59 @@
+#include <stdio.h>
+#define size 7
+int top = -1;
+int stack[size];
+void push(int element)
+{
+    if (top == size - 1)
+    {
+        printf("the stack is under overflow conditon ");
+    }
+    else
+    {top++;
+        stack[top] = element;
+    }
+}
+
+    void pop(int pop)
+    {
+        if (top == -1)
+        {
+            printf("stack is in underflow condition");
+       
+        }
+       
+    else{
+    printf("stack after popping element\n");
+    for(int i=0;i<size;i++){
+        
+        if(pop==stack[i]){
+            continue;
+        }
+          printf("%d\n",stack[i]);
+
+    }
+          }
+
+    }
+    void display(){
+        if(top==-1){
+            printf("stack is empty\n");
+        }
+        else{
+            for(int i=0;i<size;i++){
+                printf("%d\n",stack[i]);
+            }
+        }
+    }
+
+int main(){
+    push(10);
+    push(20);
+    push(30);
+    push(40);
+    push(50);
+    push(60);
+    push(70);
+    display();
+    pop(10);
+}
